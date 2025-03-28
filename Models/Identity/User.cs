@@ -23,6 +23,9 @@ public sealed class User : IdentityUser
     public string LastName { get; internal set; }
 
     [Required]
+    public string Avatar { get; internal set; }
+
+    [Required]
     public DateTime CreatedAt { get; internal set; }
 
     [NotMapped]
