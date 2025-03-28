@@ -16,4 +16,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="9.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\belmo\source\repos\kubikpatrick\Sprinter\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\belmo\source\repos\kubikpatrick\Sprinter\.editorconfig" />
+  </ItemGroup>
+
 </Project>
