@@ -1,10 +1,12 @@
 using System.Diagnostics;
+
 using Microsoft.AspNetCore.Mvc;
+
 using Sprinter.Models;
 
 namespace Sprinter.Controllers;
 
-public class HomeController : Controller
+public sealed class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
 
@@ -13,19 +15,25 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    [HttpGet]
+    public ActionResult Index()
     {
         return View();
     }
 
-    public IActionResult Privacy()
+    [HttpGet("privacy")]
+    public ActionResult Privacy()
     {
         return View();
     }
 
+    [HttpGet("error")]
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public ActionResult Error()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return View(new ErrorViewModel 
+        { 
+            RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier 
+        });
     }
 }
